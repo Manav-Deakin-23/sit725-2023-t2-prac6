@@ -31,18 +31,18 @@ describe('GET Request', function() {
 describe('Post a cat', function(){
     it('insert a cat to database', function(done){
         request.post({url:url, form: cat}, function(error,response,body){
-            //  body = JSON.parse(body);
-            // expect(body.message).to.contain('success');
             done();
         });
     });
 });
 
-describe('Delete a cat', function(){
-    it('Delete a cat from database', function(done){
-        request.delete({url:url, form: cat}, function(error,response,body){
-            // body = JSON.parse(body);
-            // expect(body.message).to.contain('removed');
+
+describe("test delete api", function() {
+    it("delete cat from db", function(done) {
+        request.delete({
+            url: url,
+            form: cat
+        }, function(err, res, body) {
             done();
         });
     });
